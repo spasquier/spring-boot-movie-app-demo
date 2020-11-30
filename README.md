@@ -36,19 +36,25 @@ When the app is ready to receive requests you can access it from the following U
 http://localhost:8080
 
 ## Browsing the Database
-To explore the database you can use the PGAdmin4 container included in the Docker environment from the following URL:
+This project includes a PGAdmin4 Docker container, so you can easily browse the Database container in the following URL:
 
 http://localhost:8081
 
-The default web user is `admin@localhost` and the default password is `postgres`
+The default user is `admin@localhost` and the default password is `postgres`.
 
-Once you're inside PGAdmin4 you can create a new connection to the Docker db container with the following details:
+Once you are inside PGAdmin4 you can add a new `Server` to connect to the `db` Docker container and easily browse the
+database, just fill the following fields:
 
 ```text
-Host: db
+General Tab
+Name: db
+
+Connection Tab
+Host name/address: db
 Port: 5432
-User: postgres
-Pass: postgres
+Maintenance Database: postgres
+Username: postgres
+Password: postgres
 ```
 
-After connecting you will be able to browse al the tables and data that this app is using.
+After adding the server you can connect and easily browse all the app tables.
