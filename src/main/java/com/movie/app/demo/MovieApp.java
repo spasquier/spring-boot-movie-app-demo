@@ -1,4 +1,4 @@
-package com.applaudostudios.movieapp;
+package com.movie.app.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
