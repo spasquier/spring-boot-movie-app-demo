@@ -8,10 +8,6 @@
   if not, then you need to download a compatible Bash interpreter, for example: https://gitforwindows.org/
 - Install Docker Desktop for Mac or Windows or Docker Engine for Linux: https://docs.docker.com/engine/install/
 
-```bash
-cd /d/Projects/Demo/movie-app
-```
-
 ### Build the App
 1. Open your Bash shell and change your working directory to this project.
 
