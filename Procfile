@@ -1,1 +1,1 @@
-web: java -jar restapi/target/restapi-0.0.1-SNAPSHOT.jar
+web: java -jar restapi/target/restapi-0.0.1-SNAPSHOT.jar -Dserver.port=$PORT
