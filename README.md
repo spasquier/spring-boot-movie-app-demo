@@ -27,8 +27,8 @@ docker-compose up
 Wait until the console shows that the REST API container is ready, it should show something like this:
 
 ```text
-o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-MovieApp              : Started MovieApp in 1.973 seconds (JVM running for 2.548)
+TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+MovieApp         : Started MovieApp in 1.973 seconds (JVM running for 2.548)
 ```
 
 When the app is ready to receive requests you can access it from the following URL:
