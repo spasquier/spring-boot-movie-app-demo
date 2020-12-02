@@ -1,4 +1,4 @@
-package com.movie.app.demo;
+package com.movie.app.demo.restapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

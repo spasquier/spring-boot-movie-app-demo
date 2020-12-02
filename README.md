@@ -28,7 +28,7 @@ Wait until the console shows that the REST API container is ready, it should sho
 
 ```text
 o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-com.movie.app.demo.MovieApp              : Started MovieApp in 1.973 seconds (JVM running for 2.548)
+MovieApp              : Started MovieApp in 1.973 seconds (JVM running for 2.548)
 ```
 
 When the app is ready to receive requests you can access it from the following URL:
