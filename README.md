@@ -8,9 +8,12 @@
 
 ### Build the App
 1. Copy the file "database/src/main/resources/application.properties.example" to
-   "database/src/main/resources/application.properties", for the Docker build you don't need to change any of these
-   values, if you are planning to run the app on your host machine then change the database connection details to the
-   ones you have on your host machine.
+   "database/src/main/resources/application.properties"
+
+If you are going to use Docker to run the app on your local environment, then you don't need to modify the file.
+
+If you are planning to run the app on your host machine, then change the Postgres configuration properties, so the  app
+can use your local Postgres installation. Also, you will need to import the database in "docker/init.sql"
 
 2. Open your console and change your working directory to this project.
 
@@ -58,7 +61,9 @@ Username: postgres
 Password: postgres
 ```
 
-### Developing
+## Developing
+
+### Changing the initial database dump
 
 If you want to make any changes to the "docker/init.sql", you need to recreate the Postgres container. Execute the
 following command to recreate the Postgres container and init the database again:
