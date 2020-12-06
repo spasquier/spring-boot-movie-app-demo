@@ -8,7 +8,7 @@
 
 ### Build the App
 1. Copy the file "database/src/main/resources/application.properties.example" to
-   "database/src/main/resources/application.properties"
+   "database/src/main/resources/application.properties".
    
 2. Open your console and change your working directory to this project.
 
@@ -19,22 +19,29 @@
 docker-compose up --build db
 ```
 
-4. Before building the app, you need to add the following line to your hosts file so that the `database` tests pass:
+4. Before building the app, you need to add the following line to your hosts file, so the connection is right:
 
 ```text
 127.0.0.1 db
 ```
 
-5. Generate the JAR file for the Docker deployment executing the following command:
+5. Generate the JAR file for the Docker deployment executing the following Maven command
+   (this repo includes Maven wrapper so, you don't have to install it):
 
 ```bash
+./mvnw package
+```
+
+If you are using Windows console, the previous command would be invalid, instead use this following:
+
+```shell
 mvnw package
 ```
 
-6. You must stop the `docker-compose up --build db` command with `Ctrl + C` after the tests and the build is done.
+6. You must stop the `docker-compose up --build db` command with `Ctrl + C` after the build is done.
 
 ### Start the Docker Container
-Once the app has been built, you can start all the Docker containers to review the app with the following command:
+After building the app, you can start all the Docker containers to review it with the following command:
 
 ```bash
 docker-compose up --build
@@ -51,15 +58,15 @@ When the app is ready, you can access it from the following URL:
 
 http://localhost:8080/api/v1/movies
 
-## Browsing the Database
-This project includes a PGAdmin4 Docker container in case you don't have PGAdmin4 on your local machine:
+## Browsing the Database with PGAdmin4
+This project includes a PGAdmin4 Docker container in case you don't have PGAdmin4 on your local machine, access it from:
 
 http://localhost:8081/
 
 The default user is `admin@localhost` and the default password is `postgres`.
 
-Once you are inside PGAdmin4 you can add a new `Server` to connect to the `db` Docker container and easily browse the
-database, these are the connection details:
+Once you are inside PGAdmin4 you can add a new `Server` to connect to the `db` Docker container, these are the
+connection details:
 
 ```text
 Connection Tab
@@ -74,8 +81,9 @@ Password: postgres
 
 ### Changing the initial database dump
 
-If you want to make any changes to the "docker/init.sql", you need to recreate the Postgres container. Execute the
-following command to recreate the Postgres container and init the database again:
+If you want to make any changes to the "docker/init.sql" and apply the changes on the Docker container you already
+started, you need to recreate the `db` container. Execute the following command to recreate the all this project
+containers and init the database again:
 
 ```bash
 docker-compose down
