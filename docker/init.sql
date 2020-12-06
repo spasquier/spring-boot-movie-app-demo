@@ -1,14 +1,14 @@
 create table movies(
     id bigint,
-    title varchar(255),
-    description varchar(1000),
-    image_id bigint,
-    rental_price numeric(10, 2),
-    sale_price numeric(10, 2),
-    availability bigint,
-    likes bigint,
-    created_at timestamp,
-    updated_at timestamp,
+    title varchar(255) not null,
+    description varchar(1000) not null,
+    image_id bigint not null,
+    rental_price numeric(10, 2) not null,
+    sale_price numeric(10, 2) not null,
+    availability bigint not null,
+    likes bigint not null,
+    created_at timestamp not null,
+    updated_at timestamp not null,
     primary key (id)
 );
 
@@ -62,11 +62,14 @@ create table users_movies_likes(
 
 create table images(
     id bigint,
-    url varchar(255),
-    created_at timestamp,
-    updated_at timestamp,
+    url varchar(255) not null,
+    created_at timestamp not null,
+    updated_at timestamp not null,
     primary key (id)
 );
 
-insert into movies(id, title, description) values(1, 'Avatar', 'A movie about aliens and nature.');
-insert into movies(id, title, description) values(2, 'Titanic', 'A movie about an ocean liner that sunk.');
+insert into images values (1, 'avatar.jpg', current_timestamp, current_timestamp);
+insert into images values (2, 'titanic.jpg', current_timestamp, current_timestamp);
+
+insert into movies values(1, 'Avatar', 'A movie about aliens and nature.', 1, 3.99, 29.50, 50, 12, current_timestamp, current_timestamp);
+insert into movies values(2, 'Titanic', 'A movie about an ocean liner that sunk.', 2, 3.50, 28.95, 40, 9, current_timestamp, current_timestamp);
