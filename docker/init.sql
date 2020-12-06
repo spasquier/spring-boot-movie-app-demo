@@ -8,7 +8,8 @@ create table movies(
     availability bigint,
     likes bigint,
     created_at timestamp,
-    updated_at timestamp
+    updated_at timestamp,
+    primary key (id)
 );
 
 create table movies_audit(
@@ -19,7 +20,8 @@ create table movies_audit(
     new_title varchar(255),
     new_rental_price numeric(10, 2),
     new_sale_price numeric(10, 2),
-    updated_at timestamp
+    updated_at timestamp,
+    primary key (id)
 );
 
 create table movies_rentals(
@@ -28,7 +30,8 @@ create table movies_rentals(
     user_id bigint,
     rented_at timestamp,
     must_return_at timestamp,
-    created_at timestamp
+    created_at timestamp,
+    primary key (id)
 );
 
 create table movies_purchases(
@@ -36,7 +39,8 @@ create table movies_purchases(
     movie_id bigint,
     user_id bigint,
     purchased_at timestamp,
-    created_at timestamp
+    created_at timestamp,
+    primary key (id)
 );
 
 create table users(
@@ -45,18 +49,24 @@ create table users(
     password varchar(255),
     enabled boolean,
     created_at timestamp,
-    updated_at timestamp
+    updated_at timestamp,
+    primary key (id)
 );
 
 create table users_movies_likes(
     id bigint,
     movie_id bigint,
-    created_at timestamp
+    created_at timestamp,
+    primary key (id)
 );
 
 create table images(
     id bigint,
     url varchar(255),
     created_at timestamp,
-    updated_at timestamp
+    updated_at timestamp,
+    primary key (id)
 );
+
+insert into movies(id, title, description) values(1, 'Avatar', 'A movie about aliens and nature.');
+insert into movies(id, title, description) values(2, 'Titanic', 'A movie about an ocean liner that sunk.');
