@@ -11,12 +11,13 @@
 	<groupId>com.movie.app</groupId>
 	<artifactId>demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>movieappdemo</name>
+	<name>movie-app-demo</name>
 	<description>Movie app demo</description>
 	<packaging>pom</packaging>
 
 	<modules>
 		<module>restapi</module>
+		<module>database</module>
 	</modules>
 
 	<properties>

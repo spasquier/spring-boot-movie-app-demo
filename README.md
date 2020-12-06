@@ -11,27 +11,13 @@
 ### Build the App
 1. Open your Bash shell and change your working directory to this project.
 
-If you are using the Bash shell included in Git for **Windows**, and for example the root of this project is
-"D:\Projects\Demo\movie-app", execute the following command:
-
-```bash
-cd /d/Projects/Demo/movie-app
-```
-
-If you are using **Linux**, change your directory to the path where this project is stored, for example if this
-project is in "/home/user/Documents/Projects/Demo/movie-app", execute the following command:
-
-```bash
-cd /home/user/Documents/Projects/Demo/movie-app
-```
-
 2. To generate a JAR file for deployments, execute the following command:
 
 ```bash
 mvnw package
 ```
 
-### Start the Docker Containers
+### Start the Docker Container
 Once the app has been built, you can set up a development environment with Docker to review the app.
 You can start this app container and all its dependencies with the following command:
 
