@@ -32,6 +32,9 @@ public class Movie {
     @Column(name = "likes", nullable = false)
     private long likes;
 
+    @Column(name = "removed", nullable = false)
+    private boolean removed;
+
     @Column(name = "created_at", nullable = false)
     private Date createdAt;
 
@@ -100,6 +103,14 @@ public class Movie {
 
     public void setLikes(long likes) {
         this.likes = likes;
+    }
+
+    public boolean isRemoved() {
+        return removed;
+    }
+
+    public void setRemoved(boolean removed) {
+        this.removed = removed;
     }
 
     public Date getCreatedAt() {

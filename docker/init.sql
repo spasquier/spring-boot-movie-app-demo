@@ -7,6 +7,7 @@ create table movies(
     sale_price numeric(10, 2) not null,
     availability bigint not null,
     likes bigint not null,
+    removed boolean not null,
     created_at timestamp not null,
     updated_at timestamp not null,
     primary key (id)
@@ -71,5 +72,5 @@ create table images(
 insert into images values (1, 'avatar.jpg', current_timestamp, current_timestamp);
 insert into images values (2, 'titanic.jpg', current_timestamp, current_timestamp);
 
-insert into movies values(1, 'Avatar', 'A movie about aliens and nature.', 1, 3.99, 29.50, 50, 12, current_timestamp, current_timestamp);
-insert into movies values(2, 'Titanic', 'A movie about an ocean liner that sunk.', 2, 3.50, 28.95, 40, 9, current_timestamp, current_timestamp);
+insert into movies values(1, 'Avatar', 'A movie about aliens and nature.', 1, 3.99, 29.50, 50, 12, false, current_timestamp, current_timestamp);
+insert into movies values(2, 'Titanic', 'A movie about an ocean liner that sunk.', 2, 3.50, 28.95, 40, 9, false, current_timestamp, current_timestamp);
