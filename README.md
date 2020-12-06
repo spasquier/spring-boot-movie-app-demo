@@ -3,29 +3,27 @@
 ## Getting Started
 
 ### Requirements
-- Install OpenJDK 8 (java 1.8), you can download it here: https://developers.redhat.com/products/openjdk/download
+- Install OpenJDK 8 (java 1.8) or higher: https://developers.redhat.com/products/openjdk/download
+- Install PostgresSQL 9.5 or higher: https://www.postgresql.org/download/
 - Install Docker Desktop for Mac or Windows or Docker Engine for Linux: https://docs.docker.com/engine/install/
 
 ### Build the App
 1. Copy the file "database/src/main/resources/application.properties.example" to
    "database/src/main/resources/application.properties".
-   
-2. Open your console and change your working directory to this project.
 
-3. You need to have Postgres running on port 5432, start the `db` Docker container with the following command
-   (if you already have Postgres running on your local machine stop it before executing this command):
-   
-```bash
-docker-compose up --build db
-```
-
-4. Before building the app, you need to add the following line to your hosts file, so the connection is right:
+2. Change the default values in the property file to the ones of your local PostgresSQL database, also import the dump
+   included in "docker/init.sql".
 
 ```text
-127.0.0.1 db
+# Database Properties
+spring.datasource.url=${DB_URL:jdbc:postgresql://localhost:5432/postgres}
+spring.datasource.username=${DB_USERNAME:postgres}
+spring.datasource.password=${DB_PASSWORD:postgres}
 ```
 
-5. Generate the JAR file for the Docker deployment executing the following Maven command
+3. Open your console and change your working directory to this project.
+
+4. Generate the JAR file for the Docker deployment executing the following Maven command
    (this repo includes Maven wrapper so, you don't have to install it):
 
 ```bash
@@ -37,8 +35,6 @@ If you are using Windows console, the previous command would be invalid, instead
 ```shell
 mvnw package
 ```
-
-6. You must stop the `docker-compose up --build db` command with `Ctrl + C` after the build is done.
 
 ### Start the Docker Container
 After building the app, you can start all the Docker containers to review it with the following command:
