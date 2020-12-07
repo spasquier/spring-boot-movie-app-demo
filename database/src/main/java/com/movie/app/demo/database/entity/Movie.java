@@ -1,6 +1,7 @@
 package com.movie.app.demo.database.entity;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
@@ -21,10 +22,10 @@ public class Movie {
     private Image image;
 
     @Column(name = "rental_price", nullable = false)
-    private String rentalPrice;
+    private BigDecimal rentalPrice;
 
     @Column(name = "sale_price", nullable = false)
-    private String salePrice;
+    private BigDecimal salePrice;
 
     @Column(name = "availability", nullable = false)
     private long availability;
@@ -73,19 +74,19 @@ public class Movie {
         this.image = image;
     }
 
-    public String getRentalPrice() {
+    public BigDecimal getRentalPrice() {
         return rentalPrice;
     }
 
-    public void setRentalPrice(String rentalPrice) {
+    public void setRentalPrice(BigDecimal rentalPrice) {
         this.rentalPrice = rentalPrice;
     }
 
-    public String getSalePrice() {
+    public BigDecimal getSalePrice() {
         return salePrice;
     }
 
-    public void setSalePrice(String salePrice) {
+    public void setSalePrice(BigDecimal salePrice) {
         this.salePrice = salePrice;
     }
 
@@ -132,6 +133,7 @@ public class Movie {
     @PrePersist
     protected void onCreate() {
         this.createdAt = new Date();
+        this.updatedAt = this.createdAt;
     }
 
     @PreUpdate

@@ -69,8 +69,10 @@ create table images(
     primary key (id)
 );
 
-insert into images values (1, 'avatar.jpg', current_timestamp, current_timestamp);
-insert into images values (2, 'titanic.jpg', current_timestamp, current_timestamp);
+insert into users values(1, 'user@movie.app', '$2a$10$JuQx2Mh2DAXvAoMwZc4Y6.ni3lA1xPGpqQ2mrukiV1bnIb8b7hS4y', true, current_timestamp, current_timestamp);
+
+insert into images values (1, 'test1.jpg', current_timestamp, current_timestamp);
+insert into images values (2, 'test2.jpg', current_timestamp, current_timestamp);
 
 insert into movies values(1, 'Avatar', 'A movie about aliens and nature.', 1, 3.99, 29.50, 50, 12, false, current_timestamp, current_timestamp);
 insert into movies values(2, 'Titanic', 'A movie about an ocean liner that sunk.', 2, 3.50, 28.95, 40, 9, false, current_timestamp, current_timestamp);

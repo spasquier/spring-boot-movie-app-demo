@@ -4,14 +4,20 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "images")
-public class Image {
+@Table(name = "users")
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @Column(name = "url", nullable = false)
-    private String url;
+    @Column(name = "username", nullable = false)
+    private String username;
+
+    @Column(name = "password", nullable = false)
+    private String password;
+
+    @Column(name = "enabled", nullable = false)
+    private boolean enabled;
 
     @Column(name = "created_at", nullable = false)
     private Date createdAt;
@@ -27,12 +33,28 @@ public class Image {
         this.id = id;
     }
 
-    public String getUrl() {
-        return url;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 
     public Date getCreatedAt() {
@@ -41,7 +63,6 @@ public class Image {
 
     public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
-        this.updatedAt = this.createdAt;
     }
 
     public Date getUpdatedAt() {
@@ -55,6 +76,7 @@ public class Image {
     @PrePersist
     protected void onCreate() {
         this.createdAt = new Date();
+        this.updatedAt = this.createdAt;
     }
 
     @PreUpdate
