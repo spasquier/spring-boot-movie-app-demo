@@ -54,8 +54,16 @@ When the app is ready, you can access it from the following URL:
 
 http://localhost:8080/api/v1/movies
 
-## Browsing the Database with PGAdmin4
-This project includes a PGAdmin4 Docker container in case you don't have PGAdmin4 on your local machine, access it from:
+## Testing the API
+
+You can import the Postman collection in "docs/postman_collection.json". You need to set the variable `BASE_URL` in
+your Postman Environment.
+
+You can use the Login endpoint to get a JWT, you must copy the value on the header `Authorization` (this is the JWT)
+and put it on Postman Authorization tab, select the type "Bearer Token" before pasting the JWT.
+
+## Browsing the Database with PG Admin 4
+The Docker environment includes PG Admin 4 in case you don't have it on your local machine, access it from:
 
 http://localhost:8081/
 
@@ -85,11 +93,3 @@ containers and init the database again:
 docker-compose down
 docker-compose up --build --force-recreate
 ```
-
-## Testing the API
-
-You can import the Postman collection in "docs/postman_collection.json". You need to set the variable `BASE_URL` in
-your Postman Environment.
-
-You can use the Login endpoint to get a JWT, you must copy the value on the header `Authorization` (this is the JWT)
-and put it on Postman Authorization tab, select the type "Bearer Token" before pasting the JWT.
